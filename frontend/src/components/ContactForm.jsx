@@ -3,10 +3,12 @@ import React, { useState } from "react";
 const ContactForm = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState({ type: "", message: "" });
 
   // Define a URL base para o backend usando variável de ambiente
-  const API_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:8080";
+  const API_URL =
+    process.env.REACT_APP_BACKEND_URL ||
+    "https://backend-gcp-818925002040.us-central1.run.app";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,14 +26,20 @@ const ContactForm = () => {
       });
 
       if (response.ok) {
-        setStatus("Mensagem enviada com sucesso!");
+        setStatus({ type: "success", message: "Mensagem enviada com sucesso!" });
         setEmail("");
         setMessage("");
       } else {
-        setStatus("Erro ao enviar mensagem. Tente novamente.");
+        const errorData = await response.json();
+        setStatus({
+          type: "error",
+          message:
+            errorData.error || "Erro ao enviar mensagem. Tente novamente.",
+        });
       }
     } catch (error) {
-      setStatus("Erro ao conectar ao servidor.");
+      console.error("Erro ao conectar ao servidor:", error);
+      setStatus({ type: "error", message: "Erro ao conectar ao servidor." });
     }
   };
 
@@ -58,7 +66,9 @@ const ContactForm = () => {
         ></textarea>
         <button type="submit">Enviar</button>
       </form>
-      {status && <p className="message">{status}</p>}
+      {status.message && (
+        <p className={`message ${status.type}`}>{status.message}</p>
+      )}
     </div>
   );
 };

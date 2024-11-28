@@ -1,61 +1,89 @@
+/* Estilo do formulário de contato */
 .contact-form {
   max-width: 600px;
   margin: 50px auto;
   padding: 20px;
   background: #ffffff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra mais destacada */
+  border-radius: 12px; /* Bordas arredondadas */
   text-align: center;
   font-family: 'Arial', sans-serif;
+  transition: transform 0.3s ease-in-out;
+}
+
+.contact-form:hover {
+  transform: scale(1.02); /* Efeito de zoom ao passar o mouse */
 }
 
 .contact-form h2 {
   font-size: 28px;
-  margin-bottom: 10px;
-  color: #333;
+  margin-bottom: 15px;
+  color: #333333; /* Cor mais escura para contraste */
+  text-transform: uppercase;
 }
 
 .contact-form p {
   font-size: 16px;
   margin-bottom: 20px;
-  color: #555;
+  color: #555555;
 }
 
 .contact-form input,
 .contact-form textarea {
-  width: 90%;
+  width: 100%;
   max-width: 500px;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 15px;
   border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 14px;
+  border-radius: 6px;
+  font-size: 15px;
   font-family: 'Arial', sans-serif;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #007bff; /* Cor de foco */
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Efeito de brilho */
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: none; /* Remove redimensionamento padrão */
 }
 
 .contact-form button {
   background-color: #007bff;
   color: white;
   border: none;
-  padding: 12px 20px;
-  border-radius: 5px;
+  padding: 12px 25px;
+  border-radius: 6px;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, transform 0.2s;
 }
 
 .contact-form button:hover {
   background-color: #0056b3;
+  transform: scale(1.05); /* Efeito ao passar o mouse */
 }
 
 .contact-form p.message {
-  color: green;
   font-size: 16px;
   margin-top: 10px;
 }
 
+.contact-form p.message.success {
+  color: green;
+}
+
+.contact-form p.message.error {
+  color: red;
+}
+
+/* Estilo do rodapé */
 .footer {
-  background-color: #f4f4f4;
+  background-color: #f8f9fa; /* Tom cinza mais claro */
   padding: 40px 20px;
   text-align: center;
   font-family: 'Arial', sans-serif;
@@ -65,7 +93,7 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -77,15 +105,18 @@
 
 .footer-content h3 {
   font-size: 18px;
-  color: #007bff;
+  color: #007bff; /* Destaque em azul */
   margin-bottom: 15px;
   text-transform: uppercase;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+  display: inline-block;
 }
 
 .footer-content ul {
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin: 10px 0;
 }
 
 .footer-content ul li {
@@ -105,4 +136,22 @@
   font-size: 14px;
   color: #777;
   text-align: center;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+/* Adiciona responsividade para telas menores */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-content div {
+    margin-bottom: 20px;
+  }
+
+  .contact-form {
+    padding: 15px;
+  }
 }
