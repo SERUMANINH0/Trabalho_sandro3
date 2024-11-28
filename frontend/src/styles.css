@@ -1,4 +1,3 @@
-/* Estilo do formulário de contato */
 .contact-form {
   max-width: 600px;
   margin: 50px auto;
@@ -55,7 +54,6 @@
   margin-top: 10px;
 }
 
-/* Estilo do rodapé */
 .footer {
   background-color: #f4f4f4;
   padding: 40px 20px;

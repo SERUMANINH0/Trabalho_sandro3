@@ -1,22 +1,22 @@
 const express = require('express');
-const cors = require('cors'); // Importa o pacote cors
+const cors = require('cors'); 
 const sendgrid = require('@sendgrid/mail');
 
-// Inicializar SendGrid com a API Key
+
 sendgrid.setApiKey('REMOVED');
 
 const app = express();
 
-// Middleware CORS
-app.use(cors()); // Permite requisições de outras origens
+
+app.use(cors());
 app.use(express.json());
 
-// Rota principal para teste
+
 app.get('/', (req, res) => {
   res.send('Aplicação rodando no Cloud Run!');
 });
 
-// Endpoint para envio de e-mail
+
 app.post('/send-email', async (req, res) => {
   try {
     const { toMail, content } = req.body;
@@ -27,7 +27,7 @@ app.post('/send-email', async (req, res) => {
 
     const msg = {
       to: toMail,
-      from: 'veneryportorufino@gmail.com', // Substitua pelo seu e-mail
+      from: 'veneryportorufino@gmail.com',
       subject: 'Automated Email',
       text: content,
     };
@@ -40,7 +40,6 @@ app.post('/send-email', async (req, res) => {
   }
 });
 
-// Configurar a porta para o servidor
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Aplicação rodando na porta ${PORT}`);
