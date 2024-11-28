@@ -2,20 +2,20 @@ const express = require('express');
 const cors = require('cors'); 
 const sendgrid = require('@sendgrid/mail');
 
-
-sendgrid.setApiKey('REMOVED');
+const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
+if (!SENDGRID_API_KEY) {
+  throw new Error('SENDGRID_API_KEY não definida!');
+}
+sendgrid.setApiKey(SENDGRID_API_KEY);
 
 const app = express();
 
-
-app.use(cors());
+app.use(cors({ origin: '*' }));
 app.use(express.json());
-
 
 app.get('/', (req, res) => {
   res.send('Aplicação rodando no Cloud Run!');
 });
-
 
 app.post('/send-email', async (req, res) => {
   try {
