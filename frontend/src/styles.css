@@ -1,0 +1,110 @@
+/* Estilo do formulário de contato */
+.contact-form {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.contact-form h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.contact-form p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 90%;
+  max-width: 500px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+}
+
+.contact-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+
+.contact-form p.message {
+  color: green;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Estilo do rodapé */
+.footer {
+  background-color: #f4f4f4;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content div {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-content h3 {
+  font-size: 18px;
+  color: #007bff;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.footer-content ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-content ul li {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-content ul li:hover {
+  color: #007bff;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #777;
+  text-align: center;
+}

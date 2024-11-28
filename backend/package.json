@@ -1,0 +1,16 @@
+{
+    "name": "sendgrid-email-function",
+    "version": "1.0.0",
+    "description": "Backend para envio de emails utilizando Express e SendGrid",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "@sendgrid/mail": "^8.1.4",
+        "cors": "^2.8.5",
+        "express": "^4.18.2"
+    },
+    "author": "",
+    "license": "ISC"
+}
