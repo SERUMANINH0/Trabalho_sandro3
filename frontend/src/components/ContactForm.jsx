@@ -8,7 +8,7 @@ const ContactForm = () => {
   // Define a URL base para o backend usando variável de ambiente
   const API_URL =
     process.env.REACT_APP_BACKEND_URL ||
-    "https://backend-gcp-818925002040.us-central1.run.app";
+    "https://backend-service-818925002040.us-central1.run.app";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
